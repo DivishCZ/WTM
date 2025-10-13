@@ -1,0 +1,25 @@
+# Jazyk pluginu / Plugin language:
+# Možnosti / Options: 'cs', 'en'
+language: cs
+
+features:
+  welcome_title:
+    enabled: true     # Zobrazit/skrýt uvítací titul při připojení / Show/hide welcome title on join
+    title: '&aVítej na serveru, %player_name%!'      # Titul zobrazený přes celou obrazovku / Title displayed across screen
+    subtitle: '&7Užij si hru!'     # Podtitulek pod hlavním titulkem / Subtitle under the main title
+    fade_in: 1     # Délka efektu "fade in" v sekundách / Fade-in duration in ticks
+    stay: 3.5        # Jak dlouho zůstane titulek na obrazovce (v sekundách) / How long title stays visible (seconds)
+    fade_out: 1    # Délka efektu "fade out" v sekundách / Fade-out duration in ticks
+    delay: 1        # Zpoždění před zobrazením titulku (v sekundách) / Delay before showing the title (in seconds)
+
+  first_join:       # Speciální uvítací zpráva při prvním připojení / Special message for first time join
+    enabled: true    # Zobrazit/skrýt speciální uvítací titul při připojení / Show/hide special welcome title on join
+    title: '&6První připojení, %player_name%!'       # Hlavní titulek pro první připojení / Title for first-time players
+    subtitle: '&eUžij si speciální uvítání!'         # Podtitulek pro první připojení / Subtitle for first-time players
+    fade_in: 1      # Fade-in efekt pro první připojení / Fade-in for first join
+    stay: 5        # Jak dlouho zůstane zpráva na obrazovce (sekund) / How long the message stays (seconds)
+    fade_out: 1     # Fade-out efekt pro první připojení / Fade-out for first join
+    delay: 1         # Zpoždění před zobrazením zprávy (sekundy) / Delay before showing the message (seconds)
+
+updates:
+  check_enabled: true    # Povolit automatickou kontrolu aktualizací při spuštění / Enable update check on plugin start

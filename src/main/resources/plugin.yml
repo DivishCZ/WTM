@@ -1,0 +1,36 @@
+name: WTM
+version: 1.0.1
+main: eu.Divish.wtm.WTM
+api-version: 1.20
+
+commands:
+  sendtitle:
+    description: Send a title to all online players / Pošle titulek všem online hráčům
+    usage: /sendtitle <message> [subtitle]
+    aliases: [st]
+    permission: wtm.sendtitle
+
+  sendtitletoplayer:
+    description: Send a title to a specific player / Pošle titulek konkrétnímu hráči
+    usage: /sendtitletoplayer <player> <message> [subtitle]
+    aliases: [sttp]
+    permission: wtm.sendtitle
+
+  welcome:
+    description: Main plugin command (reload, version) / Hlavní příkaz pluginu (reload, version)
+    usage: /welcome <reload|version>
+    permission: wtm.admin
+
+permissions:
+  wtm.sendtitle:
+    description: Allows sending titles / Povoluje odesílání titulků
+    default: op
+
+  wtm.reload:
+    description: Allows reloading the plugin / Povoluje reload pluginu
+    default: op
+
+  wtm.admin:
+    description: General permission for admin commands / Obecné oprávnění pro admin příkazy
+    default: op
+authors: [Divish]

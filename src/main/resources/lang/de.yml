@@ -1,0 +1,13 @@
+command:
+  sendtitle:
+    usage: "\u00a7eVerwendung: /sendtitle <Nachricht> | [Untertitel]"
+    success: "\u00a7aDie Nachricht wurde an alle Spieler gesendet."
+  sendtitletoplayer:
+    usage: "\u00a7eVerwendung: /sendtitletoplayer <Spieler> <Nachricht> | [Untertitel]"
+    success: "\u00a7aDie Nachricht wurde an Spieler %player% gesendet."
+    notfound: "\u00a7cSpieler wurde nicht gefunden."
+  welcome:
+    reload: "\u00a7aKonfiguration und Sprachen wurden erfolgreich neu geladen."
+    usage: "\u00a7eVerwendung: /welcome reload | /welcome version"
+    version: "\u00a7eWTM Version: \u00a7a%version% \u00a7eAutor: \u00a7a%author%"
+  nopermission: "\u00a7cDu hast keine Berechtigung, diesen Befehl zu verwenden."

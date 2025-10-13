@@ -1,0 +1,13 @@
+command:
+  sendtitle:
+    usage: "\u00a7ePoužití: /sendtitle <zpráva> | [podzpráva]"
+    success: "\u00a7aZpráva byla odeslána všem hráčům."
+  sendtitletoplayer:
+    usage: "\u00a7ePoužití: /sendtitletoplayer <hrac> <zprava> | [podzprava]"
+    success: "\u00a7aZpráva byla odeslána hráči %player%."
+    notfound: "\u00a7cHráč nebyl nalezen."
+  welcome:
+    reload: "\u00a7aKonfigurace a jazyky byly úšpěšně znovu nahrány."
+    usage: "\u00a7ePoužití: /welcome reload | /welcome version"
+    version: "\u00a7eWTM verze: \u00a7a%version% \u00a7eAutor: \u00a7a%author%"
+  nopermission: "\u00a7cNemáš oprávnění použít tento příkaz."
