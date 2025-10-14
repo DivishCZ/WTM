@@ -6,7 +6,7 @@
 
     <groupId>eu.Divish</groupId>
     <artifactId>wtm</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>wtm</name>

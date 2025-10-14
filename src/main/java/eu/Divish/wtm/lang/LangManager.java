@@ -1,6 +1,7 @@
 package eu.Divish.wtm.lang;
 
 import eu.Divish.wtm.WTM;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -32,7 +33,6 @@ public class LangManager {
 
             FileConfiguration config = YamlConfiguration.loadConfiguration(langFile);
 
-            // Load default values from inside the jar
             InputStream defConfigStream = plugin.getResource("lang/" + lang + ".yml");
             if (defConfigStream != null) {
                 YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream));
@@ -48,6 +48,16 @@ public class LangManager {
 
     public String get(String key) {
         return activeLang.getString(key, "Missing lang: " + key);
+    }
+
+    public String getLang() {
+        return plugin.getConfigManager().getLanguage().toLowerCase();
+    }
+
+    public String getMessage(String path, String lang) {
+        FileConfiguration langFile = this.languages.get(lang);
+        if (langFile == null) return "";
+        return ChatColor.translateAlternateColorCodes('&', langFile.getString(path, ""));
     }
 
     public void reload() {

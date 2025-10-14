@@ -31,7 +31,7 @@ public class SendTitleToPlayerCommand implements CommandExecutor {
 
         Player target = Bukkit.getPlayer(args[0]);
         if (target == null || !target.isOnline()) {
-            sender.sendMessage(plugin.getLangManager().get("command.playernotfound"));
+            sender.sendMessage(plugin.getLangManager().get("command.sendtitletoplayer.notfound"));
             return true;
         }
 

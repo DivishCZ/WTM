@@ -3,6 +3,8 @@ eu\Divish\wtm\listener\JoinListener.class
 eu\Divish\wtm\command\SendTitleToPlayerCommand.class
 eu\Divish\wtm\util\UpdateChecker.class
 eu\Divish\wtm\lang\LangManager.class
+eu\Divish\wtm\WTM$1.class
+eu\Divish\wtm\command\UpdateCommand.class
 eu\Divish\wtm\WTM.class
 eu\Divish\wtm\command\SendTitleCommand.class
 eu\Divish\wtm\title\TitleManager.class

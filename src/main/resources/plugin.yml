@@ -1,7 +1,11 @@
 name: WTM
-version: 1.0.1
+version: 1.0.3
 main: eu.Divish.wtm.WTM
 api-version: 1.20
+
+authors: [Divish]
+
+depend: [PlaceholderAPI]
 
 commands:
   sendtitle:
@@ -21,6 +25,11 @@ commands:
     usage: /welcome <reload|version>
     permission: wtm.admin
 
+  wtmupdate:
+    description: Confirm or cancel plugin update / Potvrzení nebo zrušení aktualizace pluginu
+    usage: /wtmupdate <confirm|cancel>
+    permission: wtm.update
+
 permissions:
   wtm.sendtitle:
     description: Allows sending titles / Povoluje odesílání titulků
@@ -33,4 +42,7 @@ permissions:
   wtm.admin:
     description: General permission for admin commands / Obecné oprávnění pro admin příkazy
     default: op
-authors: [Divish]
+
+  wtm.update:
+    description: Oprávnění pro aktualizaci pluginu přes hru / Permission for update plugin
+    default: op
