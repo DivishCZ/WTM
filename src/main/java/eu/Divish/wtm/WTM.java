@@ -253,7 +253,7 @@ public class WTM extends JavaPlugin {
         // Pravý sloupec – informační řádky
         String[] right = new String[] {
                 "","&7Vytvo\u0159il: &9Divish"+"&8",
-                "&aStable version: &6" + vPlugin +"&8",
+                "&aStable version WTM: &6" + vPlugin + "&8",
                 "&7Plugin running on &b" + srvName + " &7version &9" + vPaper +"&8"
         };
 
