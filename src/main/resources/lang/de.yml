@@ -12,7 +12,7 @@ command:
     version: "\u00a7eWTM Version: \u00a7a%version% \u00a7eAutor: \u00a7a%author%"
   nopermission: "\u00a7cDu hast keine Berechtigung, diesen Befehl zu verwenden."
 update:
-  usage: "\u00a7eVerwendung: /wtmupdate <confirm|cancel|open>"
+  usage: "\u00a7eVerwendung: /tab update <confirm|cancel|open>"
   downloading: "\u00a7eNeueste Plugin-Version wird heruntergeladen..."
   success: "\u00a7eDie neue Version wurde erfolgreich heruntergeladen. Sie wird nach einem Server-Neustart aktiviert."
   failed: "\u00a7eAktualisierung konnte nicht heruntergeladen werden"

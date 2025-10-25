@@ -12,7 +12,7 @@ command:
     version: "\u00a7eWTM verze: \u00a7a%version% \u00a7eAutor: \u00a7a%author%"
   nopermission: "\u00a7cNemáš oprávnění použít tento příkaz."
 update:
-  usage: "\u00a7ePoužití: /wtmupdate <confirm|cancel>"
+  usage: "\u00a7ePoužití: /tab update <confirm|cancel>"
   downloading: "\u00a7eStahuji nejnovější verzi pluginu..."
   success: "\u00a7eNová verze byla úspěšně stažena. Aktivuje se po restartu serveru."
   no_update_available: "\u00a7eŽádná aktualizace není dostupná."
