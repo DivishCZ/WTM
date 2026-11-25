@@ -1,3 +1,10 @@
+# Velké barevné logo DVSH při startu.
+# ascii = znaky #, vhodné pro webovou konzoli (doporučeno)
+# block = původní znaky █, pouze pro konzoli s vhodným fontem
+# Java plugin nedokáže zjistit font webové konzole.
+startup-banner:
+  style: ascii
+
 # Jazyk pluginu / Plugin language:
 # Možnosti / Options: 'cs', 'en'
 language: cs

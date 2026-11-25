@@ -9,6 +9,7 @@ import eu.Divish.wtm.lang.LangManager;
 import eu.Divish.wtm.listener.JoinListener;
 import eu.Divish.wtm.title.TitleManager;
 import eu.Divish.wtm.util.UpdateChecker;
+import eu.Divish.wtm.util.ConsoleBanner;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
@@ -16,7 +17,6 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,9 +37,6 @@ public class WTM extends JavaPlugin {
 
     // kdo v této serverové session zrušil nabídku (platí do restartu)
     private final Set<UUID> declinedThisBoot = ConcurrentHashMap.newKeySet();
-
-    // Šířka vnitřního prostoru ASCII rámečku (bez svislic)
-    private static final int BOX_WIDTH = 88;
 
     public static WTM getInstance() {
         return instance;
@@ -235,66 +232,16 @@ public class WTM extends JavaPlugin {
         }
     }
 
-    /** Odešle do konzole dvousloupcový ASCII box: vlevo DVSH 5x5 bloky (D upravené), vpravo info. */
+    /** Barevné velké DVSH, výchozí kompatibilní ASCII pro webové konzole. */
     private void sendStartupMessage() {
-        final String vPlugin = getDescription().getVersion();
-        final String vPaper  = getServer().getBukkitVersion();
-        final String srvName = getServer().getName();
-
-        // Levý sloupec – 5x5 bloky (D upravené, ať nevypadá jako O)
-        String[] left = new String[] {
-                "&a████  " + "&9█   █" + "  " + "&e████" + "  " + "&c█  █&8",
-                "&a█   █ " + "&9█   █" + "  " + "&e█"    + "     " + "&c█  █&8",
-                "&a█   █ " + "&9 █ █ " + "  " + "&e███"  + "   " + "&c████&8",
-                "&a█   █ " + "&9 █ █ " + "  " + "&e   █" + "  " + "&c█  █&8",
-                "&a████  " + "&9  █  " + "  " + "&e████" + "  " + "&c█  █&8"
+        String[] info = {
+                "",
+                "&7Vytvořil: &9Divish",
+                "&aStable version WTM: &6" + getDescription().getVersion(),
+                "&7Plugin running on &b" + getServer().getName()
+                        + " &7version &9" + getServer().getBukkitVersion()
         };
-
-        // Pravý sloupec – informační řádky
-        String[] right = new String[] {
-                "","&7Vytvo\u0159il: &9Divish"+"&8",
-                "&aStable version WTM: &6" + vPlugin + "&8",
-                "&7Plugin running on &b" + srvName + " &7version &9" + vPaper +"&8"
-        };
-
-        // Výpočet šířek: max šířka levého sloupce (viditelná), mezera, zbytek pro pravý
-        final int gap = 5; // mezera mezi sloupci
-        int leftMax = 0;
-        for (String s : left) leftMax = Math.max(leftMax, visibleLength(s));
-        int rightWidth = Math.max(0, BOX_WIDTH - leftMax - gap);
-
-        // Ohraničení
-        String border = color("&8+" + "-".repeat(BOX_WIDTH) + "+");
-        getServer().getConsoleSender().sendMessage(border);
-
-        for (int i = 0; i < left.length; i++) {
-            String L = left[i];
-            String R = (i < right.length) ? right[i] : "";
-            String leftPadded  = L + " ".repeat(Math.max(0, leftMax - visibleLength(L)));
-            String rightPadded = padToWidth(R, rightWidth);
-            String line = "&8|" + leftPadded + " ".repeat(gap) + rightPadded + "|";
-            getServer().getConsoleSender().sendMessage(color(line));
-        }
-
-        getServer().getConsoleSender().sendMessage(border);
-    }
-
-    /** Vyplní řetězec mezerami na přesnou šířku rámečku (počítá viditelnou délku bez &-barev). */
-    private String padToWidth(String s, int width) {
-        int visible = visibleLength(s);
-        int spaces = Math.max(0, width - visible);
-        return s + " ".repeat(spaces);
-    }
-
-    /** Spočítá viditelnou délku (ignoruje &-barevné kódy typu &a, &9, &l, &r, atd.). */
-    private int visibleLength(String s) {
-        if (s == null) return 0;
-        // odstraníme &X sekvence (barvy a formátování) – X = [0-9A-FK-ORa-fk-or]
-        String noColors = s.replaceAll("&[0-9A-FK-ORa-fk-or]", "");
-        return noColors.length();
-    }
-
-    private String color(String message) {
-        return ChatColor.translateAlternateColorCodes('&', message);
+        ConsoleBanner.print(getServer().getConsoleSender(),
+                getConfig().getString("startup-banner.style", "ascii"), info);
     }
 }

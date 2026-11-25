@@ -34,7 +34,7 @@ public class TitleManager {
             Component titleComponent = legacy.deserialize(title);
             Component subtitleComponent = legacy.deserialize(subtitle);
 
-            Title.Times times = Title.Times.of(
+            Title.Times times = Title.Times.times(
                     Duration.ofMillis((long) (config.getWelcomeFadeIn() * 1000)),
                     Duration.ofMillis((long) (config.getWelcomeStay() * 1000)),
                     Duration.ofMillis((long) (config.getWelcomeFadeOut() * 1000))
@@ -58,7 +58,7 @@ public class TitleManager {
             Component titleComponent = legacy.deserialize(title);
             Component subtitleComponent = legacy.deserialize(subtitle);
 
-            Title.Times times = Title.Times.of(
+            Title.Times times = Title.Times.times(
                     Duration.ofMillis((long) (config.getFirstJoinFadeIn() * 1000)),
                     Duration.ofMillis((long) (config.getFirstJoinStay() * 1000)),
                     Duration.ofMillis((long) (config.getFirstJoinFadeOut()  * 1000))

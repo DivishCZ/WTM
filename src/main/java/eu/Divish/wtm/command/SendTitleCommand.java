@@ -35,7 +35,7 @@ public class SendTitleCommand implements CommandExecutor {
         String title = parts[0].trim();
         String subtitle = parts.length > 1 ? parts[1].trim() : "";
 
-        Title.Times times = Title.Times.of(
+        Title.Times times = Title.Times.times(
                 Duration.ofMillis(1000),
                 Duration.ofMillis(3000),
                 Duration.ofMillis(1000)
